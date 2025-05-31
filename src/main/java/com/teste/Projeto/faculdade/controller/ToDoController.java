@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*") // Allow all origins for CORS
 @RestController
 @RequestMapping("/api/todos")
 public class ToDoController {
