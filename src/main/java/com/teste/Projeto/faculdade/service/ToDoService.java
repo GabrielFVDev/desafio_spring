@@ -23,6 +23,11 @@ public class ToDoService {
         return toDoRepository.findById(id);
     }
 
+    public List<ToDo> findByTitle(String title) {
+        return toDoRepository.findByTitleContainingIgnoreCase(title);
+    }
+
+
     public ToDo save(ToDo toDo) {
         return toDoRepository.save(toDo);
     }

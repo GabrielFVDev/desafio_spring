@@ -29,6 +29,11 @@ public class ToDoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/search")
+    public List<ToDo> searchByTitle(@RequestParam String title) {
+        return toDoService.findByTitle(title);
+    }
+
     @PostMapping
     public ToDo create(@RequestBody ToDo toDo) {
         return toDoService.save(toDo);
